@@ -9,11 +9,14 @@ export default function CityItem({ city }) {
       year: "numeric",
     }).format(new Date(date));
 
-  const { cityName, emoji, date,id } = city;
+  const { cityName, emoji, date, id, position } = city;
+  console.log(position);
   return (
-
     <li>
-      <Link  className={Styles.cityItem} to={`${id}`}>
+      <Link
+        className={Styles.cityItem}
+        to={`${id}?lat=${position.lat}&lng=${position.lng}`}
+      >
         <span className={Styles.emoji}>{emoji}</span>
         <h3 className={Styles.name}>{cityName}</h3>
         <time className={Styles.date}>{formatDate(date)}</time>
