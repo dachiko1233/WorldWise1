@@ -26,6 +26,7 @@ function Form() {
   const [notes, setNotes] = useState('');
   const [isLoadingGeocoding, setIsLoadingGeocoding] = useState(false);
   const [errorGeocoding, setErrorGeocoding] = useState('');
+  const [emoji, setEmoji] = useState('');
 
   useEffect(
     function () {
@@ -43,13 +44,18 @@ function Form() {
             throw new Error(
               "That doesn't seem to be a city. Click somewhere else",
             );
+          setCityName(data.city || data.locality);
+          setCountry(data.countryName);
+          setEmoji(convertToEmoji(data.countryCode));
         } catch (err) {
           console.error(err.message);
         } finally {
           setIsLoadingGeocoding(false);
         }
       }
+      fetchCityData();
     },
+
     [lat, lng],
   );
 
@@ -62,7 +68,7 @@ function Form() {
           onChange={(e) => setCityName(e.target.value)}
           value={cityName}
         />
-        {/* <span className={styles.flag}>{emoji}</span> */}
+        <span className={styles.flag}>{emoji}</span>
       </div>
 
       <div className={styles.row}>

@@ -13,7 +13,7 @@ export default function CityItem({ city }) {
     }).format(new Date(date));
 
   const { cityName, emoji, date, id, position } = city;
-  console.log(position);
+
   return (
     <li>
       <Link
