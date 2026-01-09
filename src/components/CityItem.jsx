@@ -3,7 +3,7 @@ import Styles from '../components/CityItem.module.css';
 import { useCities } from '../contexts/CitiesContext';
 
 export default function CityItem({ city }) {
-  const { currentCity } = useCities();
+  const { currentCity, deleteClick } = useCities();
 
   const formatDate = (date) =>
     new Intl.DateTimeFormat('en', {
@@ -13,6 +13,11 @@ export default function CityItem({ city }) {
     }).format(new Date(date));
 
   const { cityName, emoji, date, id, position } = city;
+
+  function handleClickDelete(e) {
+    e.preventDefault();
+    deleteClick(id);
+  }
 
   return (
     <li>
@@ -26,10 +31,7 @@ export default function CityItem({ city }) {
         <h3 className={Styles.name}>{cityName}</h3>
         <time className={Styles.date}>{formatDate(date)}</time>
 
-        <button
-          className={Styles.deleteBtn}
-          onClick={() => console.log('test')}
-        >
+        <button className={Styles.deleteBtn} onClick={handleClickDelete}>
           &times;
         </button>
       </Link>
