@@ -24,6 +24,7 @@ const BASE_URL = 'https://api.bigdatacloud.net/data/reverse-geocode-client';
 
 function Form() {
   const [lat, lng] = useUrlPosition();
+  const { createCity, loading } = useCities();
   const navigate = useNavigate();
   const [cityName, setCityName] = useState('');
   const [country, setCountry] = useState('');
@@ -32,7 +33,6 @@ function Form() {
   const [isLoadingGeocoding, setIsLoadingGeocoding] = useState(false);
   const [errorGeocoding, setErrorGeocoding] = useState('');
   const [emoji, setEmoji] = useState('');
-  const { createCity } = useCities;
 
   useEffect(
     function () {
@@ -79,7 +79,8 @@ function Form() {
       position: { lat, lng },
     };
 
-    createCity(newCity);
+    await createCity(newCity);
+    navigate('/app/cities');
   }
   if (isLoadingGeocoding) return <Spinner />;
 
@@ -89,7 +90,10 @@ function Form() {
   if (errorGeocoding) return <Message message={errorGeocoding} />;
 
   return (
-    <form className={styles.form} onSubmit={handleSabmit}>
+    <form
+      className={`${styles.form} ${loading ? styles.loading : 2}`}
+      onSubmit={handleSabmit}
+    >
       <div className={styles.row}>
         <label htmlFor="cityName">City name</label>
         <input

@@ -35,7 +35,222 @@
         "lng": 13.376933665713324
       },
       "id": 98443197
+    },
+    {
+      "cityName": "Gualter",
+      "country": "Spain",
+      "emoji": "🇪🇸",
+      "date": "2026-01-09T17:31:00.415Z",
+      "notes": "",
+      "position": {
+        "lat": "42.08332090229779",
+        "lng": "1.1194465610919615"
+      },
+      "id": 98443198
+    },
+    {
+      "cityName": "Vegas de Matute",
+      "country": "Spain",
+      "emoji": "🇪🇸",
+      "date": "2026-01-09T17:31:00.415Z",
+      "notes": "",
+      "position": {
+        "lat": "40.79968951728014",
+        "lng": "-4.264017282542075"
+      },
+      "id": 98443199
+    },
+    {
+      "cityName": "Vegas de Matute",
+      "country": "Spain",
+      "emoji": "🇪🇸",
+      "date": "2026-01-09T17:31:00.415Z",
+      "notes": "",
+      "position": {
+        "lat": "40.79968951728014",
+        "lng": "-4.264017282542075"
+      },
+      "id": 98443200
+    },
+    {
+      "cityName": "Vegas de Matute",
+      "country": "Spain",
+      "emoji": "🇪🇸",
+      "date": "2026-01-09T17:31:00.415Z",
+      "notes": "",
+      "position": {
+        "lat": "40.79968951728014",
+        "lng": "-4.264017282542075"
+      },
+      "id": 98443201
+    },
+    {
+      "cityName": "Fleury-Merogis",
+      "country": "France",
+      "emoji": "🇫🇷",
+      "date": "2026-01-09T17:31:28.445Z",
+      "notes": "",
+      "position": {
+        "lat": "48.633240723729486",
+        "lng": "2.366058487112386"
+      },
+      "id": 98443202
+    },
+    {
+      "cityName": "Fleury-Merogis",
+      "country": "France",
+      "emoji": "🇫🇷",
+      "date": "2026-01-09T17:31:28.445Z",
+      "notes": "",
+      "position": {
+        "lat": "48.633240723729486",
+        "lng": "2.366058487112386"
+      },
+      "id": 98443203
+    },
+    {
+      "cityName": "Campos",
+      "country": "Spain",
+      "emoji": "🇪🇸",
+      "date": "2026-01-09T17:35:03.728Z",
+      "notes": "",
+      "position": {
+        "lat": "39.42153875311641",
+        "lng": "2.984746290460194"
+      },
+      "id": 98443204
+    },
+    {
+      "cityName": "Campos",
+      "country": "Spain",
+      "emoji": "🇪🇸",
+      "date": "2026-01-09T17:35:03.728Z",
+      "notes": "",
+      "position": {
+        "lat": "39.42153875311641",
+        "lng": "2.984746290460194"
+      },
+      "id": 98443205
+    },
+    {
+      "cityName": "Campos",
+      "country": "Spain",
+      "emoji": "🇪🇸",
+      "date": "2026-01-09T17:36:24.226Z",
+      "notes": "",
+      "position": {
+        "lat": "39.42153875311641",
+        "lng": "2.984746290460194"
+      },
+      "id": 98443206
+    },
+    {
+      "cityName": "Campos",
+      "country": "Spain",
+      "emoji": "🇪🇸",
+      "date": "2026-01-09T17:36:24.226Z",
+      "notes": "",
+      "position": {
+        "lat": "39.42153875311641",
+        "lng": "2.984746290460194"
+      },
+      "id": 98443207
+    },
+    {
+      "cityName": "Sant Josep de sa Talaia",
+      "country": "Spain",
+      "emoji": "🇪🇸",
+      "date": "2026-01-09T17:36:34.233Z",
+      "notes": "ejof",
+      "position": {
+        "lat": "38.910444912703085",
+        "lng": "1.3819537047773656"
+      },
+      "id": 98443208
+    },
+    {
+      "cityName": "Sant Josep de sa Talaia",
+      "country": "Spain",
+      "emoji": "🇪🇸",
+      "date": "2026-01-09T17:36:34.233Z",
+      "notes": "ejof",
+      "position": {
+        "lat": "38.910444912703085",
+        "lng": "1.3819537047773656"
+      },
+      "id": 98443209
+    },
+    {
+      "cityName": "Gorodskoy Okrug Chekhov",
+      "country": "Russian Federation (the)",
+      "emoji": "🇷🇺",
+      "date": "2026-01-09T17:36:58.563Z",
+      "notes": "",
+      "position": {
+        "lat": "55.28630465296033",
+        "lng": "37.514155367910185"
+      },
+      "id": 98443210
+    },
+    {
+      "cityName": "Gorodskoy Okrug Chekhov",
+      "country": "Russian Federation (the)",
+      "emoji": "🇷🇺",
+      "date": "2026-01-09T17:36:58.563Z",
+      "notes": "",
+      "position": {
+        "lat": "55.28630465296033",
+        "lng": "37.514155367910185"
+      },
+      "id": 98443211
+    },
+    {
+      "cityName": "Zhangaqala",
+      "country": "Kazakhstan",
+      "emoji": "🇰🇿",
+      "date": "2026-01-09T17:41:28.589Z",
+      "notes": "",
+      "position": {
+        "lat": "49.505890091366425",
+        "lng": "50.61053403707263"
+      },
+      "id": 98443212
+    },
+    {
+      "cityName": "Krusevac",
+      "country": "Serbia",
+      "emoji": "🇷🇸",
+      "date": "2026-01-09T18:04:34.409Z",
+      "notes": "vfnv",
+      "position": {
+        "lat": "43.46420628112341",
+        "lng": "21.256462964650144"
+      },
+      "id": 98443213
+    },
+    {
+      "cityName": "I-n-Amguel",
+      "country": "Algeria",
+      "emoji": "🇩🇿",
+      "date": "2026-01-09T18:04:45.613Z",
+      "notes": "vfmvodf",
+      "position": {
+        "lat": "24.59177452129789",
+        "lng": "4.5308048138086585"
+      },
+      "id": 98443214
+    },
+    {
+      "cityName": "MacDonnell",
+      "country": "Australia",
+      "emoji": "🇦🇺",
+      "date": "2026-01-09T18:05:30.340Z",
+      "notes": "ksvndf",
+      "position": {
+        "lat": "-25.427536490708583",
+        "lng": "134.5700743771535"
+      },
+      "id": 98443215
     }
-    
   ]
 }

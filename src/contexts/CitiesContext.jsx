@@ -31,13 +31,13 @@ function CitiesProvider({ children }) {
       setLoading(true);
       const res = await fetch(`${BASE_URL}/cities`, {
         method: 'POST',
-        body: JSON.stringify(),
+        body: JSON.stringify(newCity),
         headers: {
           'Content-Type': 'application/json',
         },
       });
       const data = await res.json();
-      console.log(data);
+      setCities((cities) => [...cities, data]);
     } catch {
       alert('There was an error loading data ...');
     } finally {

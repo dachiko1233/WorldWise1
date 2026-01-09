@@ -26,7 +26,12 @@ export default function CityItem({ city }) {
         <h3 className={Styles.name}>{cityName}</h3>
         <time className={Styles.date}>{formatDate(date)}</time>
 
-        <button className={Styles.deleteBtn}>&times;</button>
+        <button
+          className={Styles.deleteBtn}
+          onClick={() => console.log('test')}
+        >
+          &times;
+        </button>
       </Link>
     </li>
   );
