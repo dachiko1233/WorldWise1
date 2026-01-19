@@ -1,3 +1,4 @@
+import { lazy, Suspense } from 'react';
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 
 import { CitiesProvider } from './contexts/CitiesContext';
@@ -8,7 +9,6 @@ import CityList from './components/CityList';
 import CountryList from './components/CountryList';
 import City from './components/City';
 import Form from './components/Form';
-import { lazy, Suspense } from 'react';
 import SpinnerFullPage from './components/SpinnerFullPage';
 
 // import Product from './pages/Product';
@@ -18,13 +18,15 @@ import SpinnerFullPage from './components/SpinnerFullPage';
 // import AppLayout from './pages/AppLayout';
 // import Login from './pages/Login';
 
+// dist/assets/index-Dn9REOaN.css   30.84 kB │ gzip:   5.16 kB
+// dist/assets/index-DMD7tM5J.js   567.23 kB │ gzip: 166.51 kB
+
 const HomePage = lazy(() => import('./pages/HomePage'));
 const Product = lazy(() => import('./pages/Product'));
 const Pricing = lazy(() => import('./pages/Pricing'));
 const Login = lazy(() => import('./pages/Login'));
 const AppLayout = lazy(() => import('./pages/AppLayout'));
 const PageNotFound = lazy(() => import('./pages/PageNotFound'));
-
 
 export default function App() {
   return (
