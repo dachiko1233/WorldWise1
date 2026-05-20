@@ -8,14 +8,23 @@ import {
 
 const CitiesContext = createContext();
 
+const STORAGE_KEY = 'worldwise_cities';
+
+function loadFromStorage() {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    return raw ? JSON.parse(raw) : [];
+  } catch {
+    return [];
+  }
+}
+
 const initialState = {
-  cities: [],
+  cities: loadFromStorage(),
   isLoading: false,
   currentCity: {},
   error: '',
 };
-
-const BASE_URL = 'http://localhost:9000';
 
 function reducer(state, action) {
   switch (action.type) {
@@ -23,9 +32,8 @@ function reducer(state, action) {
       return { ...state, isLoading: true };
     case 'cities/loaded':
       return { ...state, isLoading: false, cities: action.payload };
-    case 'city/loaded': {
+    case 'city/loaded':
       return { ...state, isLoading: false, currentCity: action.payload };
-    }
     case 'city/created':
       return {
         ...state,
@@ -49,81 +57,35 @@ function reducer(state, action) {
 }
 
 function CitiesProvider({ children }) {
-  // const [cities, setCities] = useState([]);
-  // const [loading, setLoading] = useState(false);
-  // const [currentCity, setCurrentCity] = useState({});
-
   const [{ cities, isLoading, currentCity, error }, dispatch] = useReducer(
     reducer,
     initialState,
   );
 
   useEffect(() => {
-    async function fetchCities() {
-      dispatch({ type: 'loading' });
-      try {
-        const res = await fetch(`${BASE_URL}/cities`);
-        const data = await res.json();
-        dispatch({ type: 'cities/loaded', payload: data });
-      } catch {
-        dispatch({ type: 'rejected' });
-      }
-    }
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(cities));
+  }, [cities]);
 
-    fetchCities();
-  }, []);
-
-  async function createCity(newCity) {
-    dispatch({ type: 'loading' });
-    try {
-      const res = await fetch(`${BASE_URL}/cities`, {
-        method: 'POST',
-        body: JSON.stringify(newCity),
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      });
-      const data = await res.json();
-      dispatch({ type: 'city/created', payload: data });
-    } catch {
-      dispatch({
-        type: 'rejected',
-        payload: 'There was an error creating the city..',
-      });
-    }
+  function createCity(newCity) {
+    const cityWithId = { ...newCity, id: Date.now() };
+    dispatch({ type: 'city/created', payload: cityWithId });
   }
 
-  async function deleteClick(id) {
-    dispatch({ type: 'loading' });
-    try {
-      await fetch(`${BASE_URL}/cities/${id}`, {
-        method: 'DELETE',
-      });
-      dispatch({ type: 'city/deleted', payload: id });
-    } catch {
-      dispatch({
-        type: 'rejected',
-        payload: 'There was an error Deleting City..',
-      });
-    }
+  function deleteClick(id) {
+    dispatch({ type: 'city/deleted', payload: id });
   }
 
   const getCity = useCallback(
-    async function getCity(id) {
+    function getCity(id) {
       if (Number(id) === currentCity.id) return;
-      dispatch({ type: 'loading' });
-      try {
-        const res = await fetch(`${BASE_URL}/cities/${id}`);
-        const data = await res.json();
-        dispatch({ type: 'city/loaded', payload: data });
-      } catch {
-        dispatch({
-          type: 'rejected',
-          payload: 'There was an error loading data ...',
-        });
+      const city = cities.find((c) => c.id === Number(id));
+      if (city) {
+        dispatch({ type: 'city/loaded', payload: city });
+      } else {
+        dispatch({ type: 'rejected', payload: 'City not found.' });
       }
     },
-    [currentCity.id],
+    [currentCity.id, cities],
   );
 
   return (
